@@ -12,9 +12,20 @@
 		9004284F21559FBB00BC99D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9004284D21559FBB00BC99D4 /* Main.storyboard */; };
 		9004285121559FBD00BC99D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9004285021559FBD00BC99D4 /* Assets.xcassets */; };
 		9004285421559FBD00BC99D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9004285221559FBD00BC99D4 /* LaunchScreen.storyboard */; };
+		9061DB192156B4C300711350 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB182156B4C300711350 /* SnapKit.framework */; };
+		9061DB242156C0F700711350 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB1A2156C0F600711350 /* Result.framework */; };
+		9061DB252156C0F700711350 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB1B2156C0F600711350 /* Realm.framework */; };
+		9061DB282156C0F700711350 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB1E2156C0F600711350 /* RxMoya.framework */; };
+		9061DB292156C0F700711350 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB1F2156C0F600711350 /* Moya.framework */; };
+		9061DB2A2156C0F700711350 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB202156C0F700711350 /* RealmSwift.framework */; };
+		9061DB2B2156C0F700711350 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB212156C0F700711350 /* Alamofire.framework */; };
+		9061DB2C2156C0F700711350 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB222156C0F700711350 /* RxSwift.framework */; };
+		9061DB2D2156C0F700711350 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB232156C0F700711350 /* RxCocoa.framework */; };
+		BC159B36FBF0DDC3147EE245 /* Pods_poatek_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B649B991F4094ABEAD710640 /* Pods_poatek_project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A9D74EF68F098A174E5C9EC /* Pods-poatek-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poatek-project.release.xcconfig"; path = "Pods/Target Support Files/Pods-poatek-project/Pods-poatek-project.release.xcconfig"; sourceTree = "<group>"; };
 		9004284621559FBB00BC99D4 /* poatek-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "poatek-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9004284921559FBB00BC99D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9004284B21559FBB00BC99D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +33,17 @@
 		9004285021559FBD00BC99D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9004285321559FBD00BC99D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9004285521559FBD00BC99D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9061DB182156B4C300711350 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		9061DB1A2156C0F600711350 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		9061DB1B2156C0F600711350 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		9061DB1E2156C0F600711350 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		9061DB1F2156C0F600711350 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		9061DB202156C0F700711350 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9061DB212156C0F700711350 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		9061DB222156C0F700711350 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		9061DB232156C0F700711350 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		B649B991F4094ABEAD710640 /* Pods_poatek_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_poatek_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1985EE8BEE154FD16C38F3 /* Pods-poatek-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poatek-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-poatek-project/Pods-poatek-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +51,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC159B36FBF0DDC3147EE245 /* Pods_poatek_project.framework in Frameworks */,
+				9061DB192156B4C300711350 /* SnapKit.framework in Frameworks */,
+				9061DB242156C0F700711350 /* Result.framework in Frameworks */,
+				9061DB252156C0F700711350 /* Realm.framework in Frameworks */,
+				9061DB282156C0F700711350 /* RxMoya.framework in Frameworks */,
+				9061DB292156C0F700711350 /* Moya.framework in Frameworks */,
+				9061DB2A2156C0F700711350 /* RealmSwift.framework in Frameworks */,
+				9061DB2B2156C0F700711350 /* Alamofire.framework in Frameworks */,
+				9061DB2C2156C0F700711350 /* RxSwift.framework in Frameworks */,
+				9061DB2D2156C0F700711350 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +72,8 @@
 			children = (
 				9004284821559FBB00BC99D4 /* poatek-project */,
 				9004284721559FBB00BC99D4 /* Products */,
+				AB1212C8E426A9C138BCF976 /* Pods */,
+				E6795AA6616DBAF6F2C5A0C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +98,32 @@
 			path = "poatek-project";
 			sourceTree = "<group>";
 		};
+		AB1212C8E426A9C138BCF976 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC1985EE8BEE154FD16C38F3 /* Pods-poatek-project.debug.xcconfig */,
+				8A9D74EF68F098A174E5C9EC /* Pods-poatek-project.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6795AA6616DBAF6F2C5A0C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9061DB212156C0F700711350 /* Alamofire.framework */,
+				9061DB1F2156C0F600711350 /* Moya.framework */,
+				9061DB1B2156C0F600711350 /* Realm.framework */,
+				9061DB202156C0F700711350 /* RealmSwift.framework */,
+				9061DB1A2156C0F600711350 /* Result.framework */,
+				9061DB232156C0F700711350 /* RxCocoa.framework */,
+				9061DB1E2156C0F600711350 /* RxMoya.framework */,
+				9061DB222156C0F700711350 /* RxSwift.framework */,
+				9061DB182156B4C300711350 /* SnapKit.framework */,
+				B649B991F4094ABEAD710640 /* Pods_poatek_project.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9004285821559FBD00BC99D4 /* Build configuration list for PBXNativeTarget "poatek-project" */;
 			buildPhases = (
+				6EA24F01C8D5BB7A63235E26 /* [CP] Check Pods Manifest.lock */,
 				9004284221559FBB00BC99D4 /* Sources */,
 				9004284321559FBB00BC99D4 /* Frameworks */,
 				9004284421559FBB00BC99D4 /* Resources */,
+				9061DB162156B1EA00711350 /* Run Linter */,
+				9061DB172156B45E00711350 /* copy-frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +159,7 @@
 				TargetAttributes = {
 					9004284521559FBB00BC99D4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -129,6 +193,85 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6EA24F01C8D5BB7A63235E26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-poatek-project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9061DB162156B1EA00711350 /* Run Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Linter";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		9061DB172156B45E00711350 /* copy-frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			name = "copy-frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxMoya.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9004284221559FBB00BC99D4 /* Sources */ = {
@@ -278,10 +421,15 @@
 		};
 		9004285921559FBD00BC99D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC1985EE8BEE154FD16C38F3 /* Pods-poatek-project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R9WHX95423;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "poatek-project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -289,17 +437,22 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "FJ.poatek-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		9004285A21559FBD00BC99D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A9D74EF68F098A174E5C9EC /* Pods-poatek-project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R9WHX95423;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "poatek-project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,7 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "FJ.poatek-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
