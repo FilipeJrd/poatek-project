@@ -1,5 +1,5 @@
 //
-//  TopMoviesViewModel.swift
+//  MoviesViewModel.swift
 //  poatek-project
 //
 //  Created by Filipe Jordão on 22/09/18.
@@ -9,20 +9,20 @@
 import Foundation
 import RxCocoa
 import RxSwift
-typealias Page = TopMoviesModel.Fetch.Request
+typealias Page = MoviesRequest
 
-protocol TopMoviesBusinessLogic {
-    func bindMoviesFetch(to driver: Driver<Page>)
+protocol MoviesBusinessLogic {
+    func fetchMovies(from page: Driver<Page>)
 }
 
-class TopMoviesInteractor: TopMoviesBusinessLogic {
-    var presenter: TopMoviesPresenter?
-    
-    func bindMoviesFetch(to driver: Driver<Page>) {
-        let processed = driver
+class MoviesInteractor: MoviesBusinessLogic {
+    var presenter: MoviesPresenter?
+
+    func fetchMovies(from page: Driver<Page>) {
+        let worker = MoviesWorker()
+        let processed = page
                         .asObservable()
-                        .debug()
-                        .flatMap { _ in Observable.just(TopMoviesModel.Fetch.Response()) }
+                        .flatMap { worker.topRatedMovies(page: $0.page) }
 
         self.presenter?.presentationInput(processed)
     }

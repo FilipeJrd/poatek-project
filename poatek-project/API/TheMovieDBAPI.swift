@@ -21,7 +21,7 @@ extension TheMovieDBAPI: TargetType {
     var path: String {
         switch self {
         case .topRatedMovies:
-            return "/movie/top_rated"
+            return "/movie/_rated"
         }
     }
 
@@ -41,7 +41,7 @@ extension TheMovieDBAPI: TargetType {
         case let .topRatedMovies(page: page):
             let parameters = [
                 "api_key": "1dbb7d290ce2cb88ef8c311f67afd994",
-                "page": page
+                "page": "\(page)"
             ] as [String: Any]
 
             return Task.requestParameters(parameters: parameters,
