@@ -25,6 +25,7 @@
 		90F2C4B4215713DD001CA8D2 /* TopMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2C4B3215713DD001CA8D2 /* TopMoviesPresenter.swift */; };
 		90F2C4B62157194D001CA8D2 /* TopMoviesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2C4B52157194D001CA8D2 /* TopMoviesConfigurator.swift */; };
 		90F2C4B8215719C1001CA8D2 /* TopMoviesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2C4B7215719C1001CA8D2 /* TopMoviesModels.swift */; };
+		90F2C4BB2157B140001CA8D2 /* TheMovieDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2C4BA2157B140001CA8D2 /* TheMovieDBAPI.swift */; };
 		BC159B36FBF0DDC3147EE245 /* Pods_poatek_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B649B991F4094ABEAD710640 /* Pods_poatek_project.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		90F2C4B3215713DD001CA8D2 /* TopMoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesPresenter.swift; sourceTree = "<group>"; };
 		90F2C4B52157194D001CA8D2 /* TopMoviesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesConfigurator.swift; sourceTree = "<group>"; };
 		90F2C4B7215719C1001CA8D2 /* TopMoviesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesModels.swift; sourceTree = "<group>"; };
+		90F2C4BA2157B140001CA8D2 /* TheMovieDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBAPI.swift; sourceTree = "<group>"; };
 		B649B991F4094ABEAD710640 /* Pods_poatek_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_poatek_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1985EE8BEE154FD16C38F3 /* Pods-poatek-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poatek-project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-poatek-project/Pods-poatek-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 		9004284821559FBB00BC99D4 /* poatek-project */ = {
 			isa = PBXGroup;
 			children = (
+				90F2C4B92157B123001CA8D2 /* API */,
 				90F2C4AD21570404001CA8D2 /* Scenes */,
 				9004284921559FBB00BC99D4 /* AppDelegate.swift */,
 				9004284B21559FBB00BC99D4 /* TabBarController.swift */,
@@ -124,6 +127,14 @@
 				90F2C4B7215719C1001CA8D2 /* TopMoviesModels.swift */,
 			);
 			path = TopMovies;
+			sourceTree = "<group>";
+		};
+		90F2C4B92157B123001CA8D2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				90F2C4BA2157B140001CA8D2 /* TheMovieDBAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		AB1212C8E426A9C138BCF976 /* Pods */ = {
@@ -312,6 +323,7 @@
 				9004284A21559FBB00BC99D4 /* AppDelegate.swift in Sources */,
 				90F2C4B8215719C1001CA8D2 /* TopMoviesModels.swift in Sources */,
 				90F2C4B02157044C001CA8D2 /* TopMoviesViewController.swift in Sources */,
+				90F2C4BB2157B140001CA8D2 /* TheMovieDBAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
