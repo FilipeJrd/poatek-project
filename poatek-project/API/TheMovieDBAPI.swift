@@ -21,7 +21,7 @@ extension TheMovieDBAPI: TargetType {
     var path: String {
         switch self {
         case .topRatedMovies:
-            return "/movie/_rated"
+            return "/movie/top_rated"
         }
     }
 

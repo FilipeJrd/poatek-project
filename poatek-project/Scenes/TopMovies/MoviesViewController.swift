@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Nuke
 
 protocol MoviesDisplayLogic {
     func display(movies: Driver<MoviesViewModel>)
@@ -41,7 +42,13 @@ extension MoviesViewController: MoviesDisplayLogic {
             .bind(to: tableView.rx.items(cellIdentifier: MovieViewCell.identifier,
                                          cellType: MovieViewCell.self)
             ) { _, movie, cell in
-                cell.textLabel?.text = movie.title
+                cell.info.title.text = movie.title
+                cell.info.date.text = movie.releaseDate
+                cell.info.rating.value = CGFloat(movie.averageRating)
+                cell.img.image = nil
+                if let imageUrlString = movie.imageURL, let url = URL(string: imageUrlString) {
+                    Nuke.loadImage(with: url, into: cell.img)
+                }
         }.disposed(by: self.disposeBag)
     }
 
@@ -52,7 +59,7 @@ extension MoviesViewController: MoviesDisplayLogic {
             .map(self.isNearTableViewBottom)
             .distinctUntilChanged()
             .filter { $0 == true }
-            .scan(1, accumulator: { page, _ in page + 1})
+            .scan(0, accumulator: { page, _ in page + 1})
             .map { MoviesRequest(page: $0) }
             .asDriver(onErrorJustReturn: MoviesRequest(page: 1))
 

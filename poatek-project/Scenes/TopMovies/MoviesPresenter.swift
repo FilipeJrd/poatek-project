@@ -31,8 +31,17 @@ class MoviesPresenter: MoviesPresentationLogic {
     }
 
     private func movieViewModel(from movie: Movie) -> MovieViewModel {
+
         return MovieViewModel(title: movie.title,
-                              averageRating: "\(movie.averageRating)",
-                              releaseDate: movie.releaseDate)
+                              averageRating: movie.averageRating * 10 ,
+                              releaseDate: movie.releaseDate,
+                              imageURL: self.imageURL(from: movie))
+    }
+
+    private func imageURL(from movie: Movie) -> String? {
+        if let backdrop = movie.backdropPath {
+            return "https://image.tmdb.org/t/p/w500\(backdrop)"
+        }
+        return nil
     }
 }

@@ -11,6 +11,10 @@
 		9004284C21559FBB00BC99D4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004284B21559FBB00BC99D4 /* TabBarController.swift */; };
 		9004285121559FBD00BC99D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9004285021559FBD00BC99D4 /* Assets.xcassets */; };
 		9004285421559FBD00BC99D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9004285221559FBD00BC99D4 /* LaunchScreen.storyboard */; };
+		90246160215806D6001F0262 /* UICircularProgressRing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9024615F215806D6001F0262 /* UICircularProgressRing.framework */; };
+		90246162215806E7001F0262 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90246161215806E7001F0262 /* Nuke.framework */; };
+		90246165215815EC001F0262 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90246164215815EC001F0262 /* CircleView.swift */; };
+		904A6B8121599DDF0071348E /* MovieBasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A6B8021599DDF0071348E /* MovieBasicInfoView.swift */; };
 		9061DB192156B4C300711350 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB182156B4C300711350 /* SnapKit.framework */; };
 		9061DB242156C0F700711350 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB1A2156C0F600711350 /* Result.framework */; };
 		9061DB252156C0F700711350 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB1B2156C0F600711350 /* Realm.framework */; };
@@ -43,6 +47,10 @@
 		9004285021559FBD00BC99D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9004285321559FBD00BC99D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9004285521559FBD00BC99D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9024615F215806D6001F0262 /* UICircularProgressRing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICircularProgressRing.framework; path = Carthage/Build/iOS/UICircularProgressRing.framework; sourceTree = "<group>"; };
+		90246161215806E7001F0262 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		90246164215815EC001F0262 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		904A6B8021599DDF0071348E /* MovieBasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBasicInfoView.swift; sourceTree = "<group>"; };
 		9061DB182156B4C300711350 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9061DB1A2156C0F600711350 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		9061DB1B2156C0F600711350 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -83,6 +91,8 @@
 				9061DB2B2156C0F700711350 /* Alamofire.framework in Frameworks */,
 				9061DB2C2156C0F700711350 /* RxSwift.framework in Frameworks */,
 				9061DB2D2156C0F700711350 /* RxCocoa.framework in Frameworks */,
+				90246160215806D6001F0262 /* UICircularProgressRing.framework in Frameworks */,
+				90246162215806E7001F0262 /* Nuke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +120,7 @@
 		9004284821559FBB00BC99D4 /* poatek-project */ = {
 			isa = PBXGroup;
 			children = (
+				90246163215815E1001F0262 /* Common */,
 				90F2C4B92157B123001CA8D2 /* API */,
 				90F2C4AD21570404001CA8D2 /* Scenes */,
 				9004284921559FBB00BC99D4 /* AppDelegate.swift */,
@@ -119,6 +130,14 @@
 				9004285521559FBD00BC99D4 /* Info.plist */,
 			);
 			path = "poatek-project";
+			sourceTree = "<group>";
+		};
+		90246163215815E1001F0262 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				90246164215815EC001F0262 /* CircleView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9085C69E2157C35C0067EB8F /* Models */ = {
@@ -138,6 +157,7 @@
 			children = (
 				90F2C4BC2157B727001CA8D2 /* TopMoviesView.swift */,
 				9085C6A62157E4770067EB8F /* MovieViewCell.swift */,
+				904A6B8021599DDF0071348E /* MovieBasicInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +203,8 @@
 		E6795AA6616DBAF6F2C5A0C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90246161215806E7001F0262 /* Nuke.framework */,
+				9024615F215806D6001F0262 /* UICircularProgressRing.framework */,
 				9061DB212156C0F700711350 /* Alamofire.framework */,
 				9061DB1F2156C0F600711350 /* Moya.framework */,
 				9061DB1B2156C0F600711350 /* Realm.framework */,
@@ -324,6 +346,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/UICircularProgressRing.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 			);
 			name = "copy-frameworks";
 			outputFileListPaths = (
@@ -338,6 +362,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxMoya.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/UICircularProgressRing.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -356,11 +382,13 @@
 				9085C6A72157E4770067EB8F /* MovieViewCell.swift in Sources */,
 				9004284C21559FBB00BC99D4 /* TabBarController.swift in Sources */,
 				90F2C4B4215713DD001CA8D2 /* MoviesPresenter.swift in Sources */,
+				90246165215815EC001F0262 /* CircleView.swift in Sources */,
 				9085C6A02157DB920067EB8F /* MoviesResponse.swift in Sources */,
 				90F2C4B22157046E001CA8D2 /* TopMoviesInteractor.swift in Sources */,
 				9004284A21559FBB00BC99D4 /* AppDelegate.swift in Sources */,
 				90F2C4B02157044C001CA8D2 /* MoviesViewController.swift in Sources */,
 				9085C6AB2157F5180067EB8F /* MovieViewModel.swift in Sources */,
+				904A6B8121599DDF0071348E /* MovieBasicInfoView.swift in Sources */,
 				90F2C4BF2157B946001CA8D2 /* MoviesWorker.swift in Sources */,
 				9085C6A42157DBDD0067EB8F /* MoviesViewModel.swift in Sources */,
 				90F2C4BB2157B140001CA8D2 /* TheMovieDBAPI.swift in Sources */,

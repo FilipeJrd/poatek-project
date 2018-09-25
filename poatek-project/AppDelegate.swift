@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+        (window?.rootViewController as? UINavigationController)?.navigationBar.barTintColor = #colorLiteral(red: 0.03137254902, green: 0.1098039216, blue: 0.1333333333, alpha: 1)
+        (window?.rootViewController as? UINavigationController)?.navigationBar.isTranslucent = false
         window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true

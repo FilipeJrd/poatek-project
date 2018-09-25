@@ -10,6 +10,7 @@ import Foundation
 
 struct MovieViewModel {
     let title: String
-    let averageRating: String
+    let averageRating: Float
     let releaseDate: String
+    let imageURL: String?
 }

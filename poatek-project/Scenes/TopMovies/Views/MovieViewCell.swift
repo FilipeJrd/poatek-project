@@ -7,15 +7,58 @@
 //
 
 import UIKit
+import SnapKit
+import UICircularProgressRing
 
 class MovieViewCell: UITableViewCell {
     static let identifier = "MovieCell"
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .white
-    }
+    let img = UIImageView()
+    let info = MovieBasicInfoView()
+
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
+    }
+
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        self.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9529411765, blue: 0.9529411765, alpha: 1)
+        
+        self.setupContentView()
+        self.setupImg()
+        self.setupInfoContainer()
+    }
+
+    private func setupContentView() {
+        self.contentView.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.top.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(20)
+            make.height.equalTo(self.contentView.snp.width).multipliedBy(0.7)
+        }
+    }
+
+    private func setupImg() {
+        self.contentView.addSubview(self.img)
+        self.img.contentMode = .scaleAspectFill
+        self.img.clipsToBounds = true
+        self.img.snp.makeConstraints { make in
+            make.bottom.top.left.right.equalToSuperview()
+        }
+    }
+
+    private func setupInfoContainer() {
+        self.contentView.addSubview(self.info)
+        self.info.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.info.snp.makeConstraints { make in
+            make.bottom.left.right.equalToSuperview()
+            make.height.equalTo(80)
+        }
     }
 }
