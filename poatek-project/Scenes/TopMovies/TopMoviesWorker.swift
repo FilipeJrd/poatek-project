@@ -11,7 +11,7 @@ import Moya
 import RxMoya
 import RxSwift
 
-class MoviesWorker {
+class TopMoviesWorker {
     private let provider = MoyaProvider<TheMovieDBAPI>()
     func topRatedMovies(page: Int) -> Observable<MoviesResponse> {
         return

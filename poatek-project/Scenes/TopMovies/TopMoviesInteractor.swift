@@ -9,17 +9,12 @@
 import Foundation
 import RxCocoa
 import RxSwift
-typealias Page = MoviesRequest
 
-protocol MoviesBusinessLogic {
-    func fetchMovies(from page: Driver<Page>)
-}
-
-class MoviesInteractor: MoviesBusinessLogic {
+class TopMoviesInteractor: MoviesBusinessLogic {
     var presenter: MoviesPresenter?
 
     func fetchMovies(from page: Driver<Page>) {
-        let worker = MoviesWorker()
+        let worker = TopMoviesWorker()
         let processed = page
                         .asObservable()
                         .flatMap { worker.topRatedMovies(page: $0.page) }

@@ -71,17 +71,3 @@ extension MoviesViewController: MoviesDisplayLogic {
         return point.y + tableView.frame.size.height + 20 > tableView.contentSize.height
     }
 }
-
-extension MoviesViewController {
-    static func setup() -> MoviesViewController {
-        let viewController = MoviesViewController()
-        let interactor = MoviesInteractor()
-        let presenter = MoviesPresenter()
-
-        viewController.interactor = interactor
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-
-        return viewController
-    }
-}

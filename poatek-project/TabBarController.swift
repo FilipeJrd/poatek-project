@@ -11,6 +11,6 @@ import UIKit
 class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewControllers = [MoviesViewController.setup()]
+        self.viewControllers = [TopMoviesViewController.setup()]
     }
 }
