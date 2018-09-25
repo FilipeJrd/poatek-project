@@ -9,8 +9,14 @@
 import UIKit
 
 class TopMoviesViewController: MoviesViewController {
+
+    override func viewDidLoad() {
+        self.title = "Top Rated"
+        super.viewDidLoad()
+    }
+
     static func setup() -> UIViewController {
-        let viewController = MoviesViewController()
+        let viewController = TopMoviesViewController()
         let interactor = TopMoviesInteractor()
         let presenter = MoviesPresenter()
 
@@ -18,6 +24,13 @@ class TopMoviesViewController: MoviesViewController {
         interactor.presenter = presenter
         presenter.viewController = viewController
 
-        return viewController
+        let navVc = UINavigationController(rootViewController: viewController)
+        navVc.navigationBar.barTintColor = #colorLiteral(red: 0.03137254902, green: 0.1098039216, blue: 0.1333333333, alpha: 1)
+        navVc.navigationBar.prefersLargeTitles = true
+        navVc.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navVc.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+        navVc.navigationBar.isTranslucent = false
+        return navVc
     }
 }
