@@ -13,4 +13,6 @@ struct MovieViewModel {
     let averageRating: Float
     let releaseDate: String
     let imageURL: String?
+    let summary: String
+
 }
