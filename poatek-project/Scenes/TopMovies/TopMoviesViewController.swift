@@ -24,11 +24,13 @@ class TopMoviesViewController: MoviesViewController {
         interactor.presenter = presenter
         presenter.viewController = viewController
 
+        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+
         let navVc = UINavigationController(rootViewController: viewController)
         navVc.navigationBar.barTintColor = #colorLiteral(red: 0.03137254902, green: 0.1098039216, blue: 0.1333333333, alpha: 1)
         navVc.navigationBar.prefersLargeTitles = true
-        navVc.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navVc.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navVc.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1294117647, green: 0.8156862745, blue: 0.4784313725, alpha: 1)]
+        navVc.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.1294117647, green: 0.8156862745, blue: 0.4784313725, alpha: 1)]
 
         navVc.navigationBar.isTranslucent = false
         return navVc

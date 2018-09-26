@@ -17,6 +17,8 @@ class MoviesView: UIView {
     override init(frame: CGRect) {
         self.tableView = UITableView()
         self.tableView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9529411765, blue: 0.9529411765, alpha: 1)
+        self.tableView.rowHeight = 320
+        self.tableView.separatorStyle = .none
         super.init(frame: frame)
     }
 

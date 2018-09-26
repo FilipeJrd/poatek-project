@@ -8,13 +8,14 @@
 
 import UIKit
 import SnapKit
+import ShadowView
+
 import UICircularProgressRing
 
 class MovieViewCell: UITableViewCell {
     static let identifier = "MovieCell"
     let img = UIImageView()
     let info = MovieBasicInfoView()
-
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -23,12 +24,8 @@ class MovieViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
-    }
-
-    override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
         self.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9529411765, blue: 0.9529411765, alpha: 1)
-        
+
         self.setupContentView()
         self.setupImg()
         self.setupInfoContainer()
@@ -39,9 +36,14 @@ class MovieViewCell: UITableViewCell {
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(20)
-            make.bottom.equalToSuperview().offset(20)
-            make.height.equalTo(self.contentView.snp.width).multipliedBy(0.7)
+            make.bottom.equalToSuperview().offset(-20)
+            make.height.equalTo(self.snp.width).multipliedBy(0.7)
         }
+
+        self.contentView.shadowRadius = 5
+        self.contentView.shadowOffset = CGSize.zero
+        self.contentView.shadowColor = UIColor.black
+        self.contentView.shadowOpacity = 0.3
     }
 
     private func setupImg() {

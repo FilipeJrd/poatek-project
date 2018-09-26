@@ -8,6 +8,7 @@
 
 import Foundation
 import RxCocoa
+import Moya
 import RxSwift
 
 typealias PageResponse = MoviesResponse
@@ -22,6 +23,13 @@ class MoviesPresenter: MoviesPresentationLogic {
         let moviesDriver = input
             .map(self.viewModel)
             .asDriver(onErrorJustReturn: MoviesViewModel(movies: []))
+
+        let errorDriver = input
+            .map { _ in String() }
+            .asDriver(onErrorJustReturn: "Something went wrong")
+            .filter { !$0.isEmpty }
+
+        self.viewController?.display(errorMessage: errorDriver)
         self.viewController?.display(movies: moviesDriver)
     }
 
