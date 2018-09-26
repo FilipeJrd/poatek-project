@@ -17,6 +17,9 @@
 		904A6B8121599DDF0071348E /* MovieBasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A6B8021599DDF0071348E /* MovieBasicInfoView.swift */; };
 		904A6B832159BA090071348E /* MoviesBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A6B822159BA090071348E /* MoviesBusinessLogic.swift */; };
 		904A6B862159BA690071348E /* TopMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A6B852159BA690071348E /* TopMoviesViewController.swift */; };
+		904A6B892159C12F0071348E /* PopularMoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A6B882159C12F0071348E /* PopularMoviesInteractor.swift */; };
+		904A6B8B2159C16F0071348E /* PopularMoviesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A6B8A2159C16F0071348E /* PopularMoviesWorker.swift */; };
+		904A6B8D2159C1B60071348E /* PopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A6B8C2159C1B60071348E /* PopularMoviesViewController.swift */; };
 		9061DB192156B4C300711350 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB182156B4C300711350 /* SnapKit.framework */; };
 		9061DB242156C0F700711350 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB1A2156C0F600711350 /* Result.framework */; };
 		9061DB252156C0F700711350 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9061DB1B2156C0F600711350 /* Realm.framework */; };
@@ -55,6 +58,9 @@
 		904A6B8021599DDF0071348E /* MovieBasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBasicInfoView.swift; sourceTree = "<group>"; };
 		904A6B822159BA090071348E /* MoviesBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesBusinessLogic.swift; sourceTree = "<group>"; };
 		904A6B852159BA690071348E /* TopMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesViewController.swift; sourceTree = "<group>"; };
+		904A6B882159C12F0071348E /* PopularMoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesInteractor.swift; sourceTree = "<group>"; };
+		904A6B8A2159C16F0071348E /* PopularMoviesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesWorker.swift; sourceTree = "<group>"; };
+		904A6B8C2159C1B60071348E /* PopularMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewController.swift; sourceTree = "<group>"; };
 		9061DB182156B4C300711350 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9061DB1A2156C0F600711350 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		9061DB1B2156C0F600711350 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -154,6 +160,16 @@
 			path = TopMovies;
 			sourceTree = "<group>";
 		};
+		904A6B872159C11D0071348E /* PopularMovies */ = {
+			isa = PBXGroup;
+			children = (
+				904A6B882159C12F0071348E /* PopularMoviesInteractor.swift */,
+				904A6B8A2159C16F0071348E /* PopularMoviesWorker.swift */,
+				904A6B8C2159C1B60071348E /* PopularMoviesViewController.swift */,
+			);
+			path = PopularMovies;
+			sourceTree = "<group>";
+		};
 		9085C69E2157C35C0067EB8F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +195,7 @@
 		90F2C4AD21570404001CA8D2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				904A6B872159C11D0071348E /* PopularMovies */,
 				904A6B842159BA1E0071348E /* TopMovies */,
 				90F2C4AE2157043B001CA8D2 /* Movies */,
 			);
@@ -246,6 +263,7 @@
 				9004284421559FBB00BC99D4 /* Resources */,
 				9061DB162156B1EA00711350 /* Run Linter */,
 				9061DB172156B45E00711350 /* copy-frameworks */,
+				8B96B05DC83466AC6840AE13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,6 +343,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8B96B05DC83466AC6840AE13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-poatek-project/Pods-poatek-project-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ShadowView/ShadowView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ShadowView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-poatek-project/Pods-poatek-project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9061DB162156B1EA00711350 /* Run Linter */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,9 +430,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904A6B8B2159C16F0071348E /* PopularMoviesWorker.swift in Sources */,
 				9085C6A92157F48D0067EB8F /* Movie.swift in Sources */,
 				9085C6A22157DBD10067EB8F /* MoviesRequest.swift in Sources */,
 				90F2C4BD2157B727001CA8D2 /* MoviesView.swift in Sources */,
+				904A6B892159C12F0071348E /* PopularMoviesInteractor.swift in Sources */,
 				9085C6A72157E4770067EB8F /* MovieViewCell.swift in Sources */,
 				9004284C21559FBB00BC99D4 /* TabBarController.swift in Sources */,
 				90F2C4B4215713DD001CA8D2 /* MoviesPresenter.swift in Sources */,
@@ -404,6 +446,7 @@
 				904A6B862159BA690071348E /* TopMoviesViewController.swift in Sources */,
 				9085C6AB2157F5180067EB8F /* MovieViewModel.swift in Sources */,
 				904A6B832159BA090071348E /* MoviesBusinessLogic.swift in Sources */,
+				904A6B8D2159C1B60071348E /* PopularMoviesViewController.swift in Sources */,
 				904A6B8121599DDF0071348E /* MovieBasicInfoView.swift in Sources */,
 				90F2C4BF2157B946001CA8D2 /* TopMoviesWorker.swift in Sources */,
 				9085C6A42157DBDD0067EB8F /* MoviesViewModel.swift in Sources */,

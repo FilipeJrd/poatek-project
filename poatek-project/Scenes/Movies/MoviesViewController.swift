@@ -13,6 +13,7 @@ import Nuke
 
 protocol MoviesDisplayLogic {
     func display(movies: Driver<MoviesViewModel>)
+    func display(errorMessage: Driver<String>)
 }
 
 class MoviesViewController: UIViewController {
@@ -34,6 +35,21 @@ class MoviesViewController: UIViewController {
 }
 
 extension MoviesViewController: MoviesDisplayLogic {
+    func display(errorMessage: Driver<String>) {
+        errorMessage.asObservable().subscribe { event in
+            if case let .next(errorMessage) = event {
+                let alert = UIAlertController(title: "Oops",
+                                              message: errorMessage,
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok",
+                                              style: .cancel,
+                                              handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }.disposed(by: self.disposeBag)
+    }
+
     func display(movies: Driver<MoviesViewModel>) {
         let tableView = self.moviesView.tableView
         movies.asObservable()

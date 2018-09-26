@@ -1,5 +1,5 @@
 //
-//  TopMoviesViewController.swift
+//  PopularMoviesViewController.swift
 //  poatek-project
 //
 //  Created by Filipe Jordão on 24/09/18.
@@ -8,23 +8,22 @@
 
 import UIKit
 
-class TopMoviesViewController: MoviesViewController {
-
+class PopularMoviesViewController: MoviesViewController {
     override func viewDidLoad() {
-        self.title = "Top Rated"
+        self.title = "Popular"
         super.viewDidLoad()
     }
 
     static func setup() -> UIViewController {
-        let viewController = TopMoviesViewController()
-        let interactor = TopMoviesInteractor()
+        let viewController = PopularMoviesViewController()
+        let interactor = PopularMoviesInteractor()
         let presenter = MoviesPresenter()
 
         viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = viewController
 
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 1)
 
         let navVc = UINavigationController(rootViewController: viewController)
         navVc.navigationBar.barTintColor = #colorLiteral(red: 0.03137254902, green: 0.1098039216, blue: 0.1333333333, alpha: 1)
