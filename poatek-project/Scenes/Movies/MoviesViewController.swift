@@ -71,11 +71,12 @@ extension MoviesViewController: MoviesDisplayLogic {
     private func setupTableViewbindind() {
         let tableView = self.moviesView.tableView
 
-        tableView.rx.itemSelected.subscribe(onNext: { _ in
-            let vc = MovieDetailViewController()
-
+        tableView.rx.modelSelected(MovieViewModel.self).subscribe { event in
+            if case let .next(movie) = event {
+            let vc = MovieDetailViewController.setup(with: movie)
             self.present(vc, animated: true)
-        }).disposed(by: self.disposeBag)
+            }
+        }.disposed(by: self.disposeBag)
 
 
         let pageDriver = tableView.rx

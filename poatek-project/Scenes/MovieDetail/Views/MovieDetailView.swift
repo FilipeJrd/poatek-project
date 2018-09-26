@@ -31,9 +31,9 @@ class MovieDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     private func setupClose() {
         self.addSubview(self.close)
+        self.close.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         self.close.setTitle("close", for: .normal)
         self.close.setTitleColor(#colorLiteral(red: 0.1294117647, green: 0.8156862745, blue: 0.4784313725, alpha: 1), for: .normal)
         self.close.addTarget(self, action: #selector(self.didPressClose), for: .touchUpInside)
@@ -47,7 +47,8 @@ class MovieDetailView: UIView {
     }
 
     private func setupImg() {
-        img.backgroundColor = .red
+        self.img.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.8156862745, blue: 0.4784313725, alpha: 1)
+        self.img.contentMode = .scaleAspectFill
         self.addSubview(self.img)
         self.img.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
@@ -66,34 +67,15 @@ class MovieDetailView: UIView {
     }
 
     private func setupSummary() {
-        self.summary.text = """
-        asdasda
-        sd
-        as
-        da
-        sdasdasdasdasdasdasdasdas
-        da
-        sdasdas
-        da
-        sdasdasdasdasdasdasdasdas
-        da
-        sdasdas
-        da
-        sdasdasdasdasdasdasdasdas
-        da
-        sdasdas
-        da
-        sdasdasdasdasdasdasdasdas
-        da
-        sdasdas
-"""
         self.addSubview(self.summary)
         self.summary.isScrollEnabled = false
         self.summary.isEditable = false
         self.summary.textColor = .white
         self.summary.backgroundColor = .clear
+        self.summary.font = UIFont.systemFont(ofSize: 20)
+        self.summary.textAlignment = .justified
         self.summary.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
+            make.left.right.equalToSuperview().inset(15)
             make.top.equalTo(self.info.snp.bottom)
             make.height.greaterThanOrEqualTo(0)
         }

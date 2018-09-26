@@ -43,7 +43,8 @@ class MoviesPresenter: MoviesPresentationLogic {
         return MovieViewModel(title: movie.title,
                               averageRating: movie.averageRating * 10 ,
                               releaseDate: movie.releaseDate,
-                              imageURL: self.imageURL(from: movie))
+                              imageURL: self.imageURL(from: movie),
+                              summary: movie.overview)
     }
 
     private func imageURL(from movie: Movie) -> String? {
