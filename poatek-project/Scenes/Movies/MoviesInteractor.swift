@@ -19,8 +19,7 @@ class MoviesInteractor: MoviesBusinessLogic {
             return
         }
 
-        let movies = MoviesWorker(datastore: datastore)
-            .movies(page: page.map{ $0.page }.asObservable())
+        let movies = MoviesWorker(datastore: datastore).movies(page: page.asObservable())
         self.presenter?.presentationInput(movies)
     }
 }

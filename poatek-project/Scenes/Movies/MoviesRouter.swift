@@ -19,10 +19,10 @@ class MoviesRouter: MoviesRoutingLogic {
     weak var viewController: UIViewController?
     var datastore: MoviesDataStore?
 
-
     func route(to detailedIndex: Observable<Int>) {
         guard let datastore = datastore else { return }
         let movies = datastore.movies()
+
         detailedIndex
             .withLatestFrom(movies) { $1[$0] }
             .subscribe (onNext: { movie in

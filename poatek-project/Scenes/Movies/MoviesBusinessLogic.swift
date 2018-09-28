@@ -9,7 +9,7 @@
 import Foundation
 import RxCocoa
 
-typealias Page = MoviesRequest
+typealias Page = Int
 
 protocol MoviesBusinessLogic {
     func fetchMovies(from page: Driver<Page>)

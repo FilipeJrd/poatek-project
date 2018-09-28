@@ -76,8 +76,7 @@ extension MoviesViewController: MoviesDisplayLogic {
             .distinctUntilChanged()
             .filter { $0 == true }
             .scan(0, accumulator: { page, _ in page + 1})
-            .map { MoviesRequest(page: $0) }
-            .asDriver(onErrorJustReturn: MoviesRequest(page: 1))
+            .asDriver(onErrorJustReturn: 1)
 
         self.interactor?.fetchMovies(from: pageDriver)
 
