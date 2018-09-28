@@ -17,7 +17,11 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
     var viewController: MovieDetailDisplayLogic?
 
     func present(movie: Observable<Movie>) {
-        let emptyViewModel = MovieDetailViewModel(title: "", averageRating: 0, releaseDate: "", imageURL: nil, summary: "")
+        let emptyViewModel = MovieDetailViewModel(title: "",
+                                                  averageRating: 0,
+                                                  releaseDate: "",
+                                                  imageURL: nil,
+                                                  summary: "")
 
         let viewModel = movie.map(MovieDetailViewModel.from)
                              .asDriver(onErrorJustReturn: emptyViewModel)

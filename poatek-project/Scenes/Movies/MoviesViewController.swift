@@ -31,7 +31,6 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableViewbindind()
-
     }
 }
 
