@@ -16,6 +16,7 @@ class MovieViewCell: UITableViewCell {
     static let identifier = "MovieCell"
     let img = UIImageView()
     let info = MovieBasicInfoView()
+    let content = UIView()
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -32,21 +33,22 @@ class MovieViewCell: UITableViewCell {
     }
 
     private func setupContentView() {
-        self.contentView.snp.makeConstraints { make in
+        self.contentView.addSubview(self.content)
+        self.content.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(20)
             make.bottom.equalToSuperview().offset(-20)
         }
 
-        self.contentView.shadowRadius = 5
-        self.contentView.shadowOffset = CGSize.zero
-        self.contentView.shadowColor = UIColor.black
-        self.contentView.shadowOpacity = 0.3
+        self.content.shadowRadius = 5
+        self.content.shadowOffset = CGSize.zero
+        self.content.shadowColor = UIColor.black
+        self.content.shadowOpacity = 0.3
     }
 
     private func setupImg() {
-        self.contentView.addSubview(self.img)
+        self.content.addSubview(self.img)
         self.img.contentMode = .scaleAspectFill
         self.img.clipsToBounds = true
         self.img.snp.makeConstraints { make in
@@ -55,7 +57,7 @@ class MovieViewCell: UITableViewCell {
     }
 
     private func setupInfoContainer() {
-        self.contentView.addSubview(self.info)
+        self.content.addSubview(self.info)
         self.info.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.info.snp.makeConstraints { make in
             make.bottom.left.right.equalToSuperview()
