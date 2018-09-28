@@ -39,8 +39,19 @@ struct Movie: Codable {
         case backdropPath = "backdrop_path"
     }
 
-    init(votes: Int, identifier: Int, hasVideo: Bool, averageRating: Float, title: String,
-         popularity: Float, posterPath: String?, originalTitle: String, originalLanguage: String, isAdult: Bool, overview: String, releaseDate: String, backdropPath: String?) {
+    init(votes: Int,
+         identifier: Int,
+         hasVideo: Bool,
+         averageRating: Float,
+         title: String,
+         popularity: Float,
+         posterPath: String?,
+         originalTitle: String,
+         originalLanguage: String,
+         isAdult: Bool,
+         overview: String,
+         releaseDate: String,
+         backdropPath: String?) {
 
         self.votes = votes
         self.identifier = identifier

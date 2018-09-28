@@ -20,10 +20,9 @@ class FavoriteMoviesViewController: MoviesViewController {
             .map { _ in 0 }
             .asDriver(onErrorJustReturn: 0)
 
-
         self.interactor?.fetchMovies(from: dataFetcher)
     }
-    
+
     static func setup() -> UIViewController {
         let viewController = FavoriteMoviesViewController()
         let interactor = MoviesInteractor()

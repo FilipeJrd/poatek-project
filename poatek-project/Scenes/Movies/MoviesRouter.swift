@@ -26,8 +26,10 @@ class MoviesRouter: MoviesRoutingLogic {
         detailedIndex
             .withLatestFrom(movies) { $1[$0] }
             .subscribe (onNext: { movie in
-                let destinationVc = MovieDetailViewController.setup(with: movie)
-                self.viewController?.present(destinationVc, animated: true)
+                DispatchQueue.main.async {
+                    let destinationVc = MovieDetailViewController.setup(with: movie)
+                    self.viewController?.present(destinationVc, animated: true)
+                }
             })
             .disposed(by: disposeBag)
     }

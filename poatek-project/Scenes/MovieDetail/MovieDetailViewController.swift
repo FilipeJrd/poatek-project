@@ -34,9 +34,13 @@ class MovieDetailViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = self.movieDetailView
+
         self.movieDetailView.closeAction = {
-            self.dismiss(animated: true)
+            DispatchQueue.main.async {
+                self.dismiss(animated: true)
+            }
         }
+
         let dataLoader = self.rx.sentMessage(#selector(self.viewDidLoad))
                                 .map { _ in }
         let favoriteButtonTap = self.movieDetailView.favorite.rx.tap.asObservable()

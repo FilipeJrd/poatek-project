@@ -37,7 +37,6 @@ class MovieViewCell: UITableViewCell {
             make.right.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(20)
             make.bottom.equalToSuperview().offset(-20)
-            make.height.equalTo(self.snp.width).multipliedBy(0.7)
         }
 
         self.contentView.shadowRadius = 5

@@ -32,7 +32,7 @@ class MoviesViewController: UIViewController {
         super.viewDidLoad()
         self.setupTableViewbindind()
     }
-    
+
     func setupDataDriver() {
         let tableView = self.moviesView.tableView
 
@@ -43,7 +43,6 @@ class MoviesViewController: UIViewController {
             .filter { $0 == true }
             .scan(0, accumulator: { page, _ in page + 1})
             .asDriver(onErrorJustReturn: 1)
-
 
         self.interactor?.fetchMovies(from: pageDriver)
     }

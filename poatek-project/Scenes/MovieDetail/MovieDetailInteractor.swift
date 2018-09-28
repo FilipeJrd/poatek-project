@@ -38,7 +38,6 @@ class MovieDetailInteractor: MovieDetailBusinessLogic {
                 }
         }).disposed(by: disposeBag)
 
-
         request.withLatestFrom(self.movie)
             .map { movie in MovieDetailResponse(movie: movie.movie, isFavorite: !movie.isFavorite)}
             .bind(to: self.movie)

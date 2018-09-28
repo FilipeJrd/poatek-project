@@ -27,8 +27,8 @@ struct MovieDetailViewModel {
     }
 
     private static func imageURL(from movie: Movie) -> String? {
-        if let backdrop = movie.backdropPath {
-            return "https://image.tmdb.org/t/p/w500\(backdrop)"
+        if let poster = movie.posterPath {
+            return "https://image.tmdb.org/t/p/w500\(poster)"
         }
         return nil
     }

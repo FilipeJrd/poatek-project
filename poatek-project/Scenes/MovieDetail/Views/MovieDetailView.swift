@@ -66,8 +66,9 @@ class MovieDetailView: UIView {
     }
 
     private func setupImg() {
-        self.img.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.8156862745, blue: 0.4784313725, alpha: 1)
-        self.img.contentMode = .scaleAspectFill
+        self.img.backgroundColor = .clear
+        self.img.contentMode = .scaleAspectFit
+        self.img.clipsToBounds = true
         self.addSubview(self.img)
         self.img.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
