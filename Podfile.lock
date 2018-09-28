@@ -1,0 +1,20 @@
+PODS:
+  - ShadowView (1.2)
+  - SwiftLint (0.27.0)
+
+DEPENDENCIES:
+  - ShadowView
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ShadowView
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  ShadowView: e686f2e27fc281c0118419b1fb314b6e534a4682
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+
+PODFILE CHECKSUM: 354cb5f2e3f5f265175dbf054feb9bfec8991601
+
+COCOAPODS: 1.5.3
