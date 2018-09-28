@@ -10,18 +10,19 @@ import Foundation
 import RxSwift
 
 protocol MovieDetailPresentationLogic {
-    func present(movie: Observable<Movie>)
+    func present(movie: Observable<MovieDetailResponse>)
 }
 
 class MovieDetailPresenter: MovieDetailPresentationLogic {
     var viewController: MovieDetailDisplayLogic?
 
-    func present(movie: Observable<Movie>) {
+    func present(movie: Observable<MovieDetailResponse>) {
         let emptyViewModel = MovieDetailViewModel(title: "",
                                                   averageRating: 0,
                                                   releaseDate: "",
                                                   imageURL: nil,
-                                                  summary: "")
+                                                  summary: "",
+                                                  isFavorite: false)
 
         let viewModel = movie.map(MovieDetailViewModel.from)
                              .asDriver(onErrorJustReturn: emptyViewModel)

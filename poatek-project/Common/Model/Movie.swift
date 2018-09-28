@@ -18,7 +18,6 @@ struct Movie: Codable {
     let posterPath: String?
     let originalTitle: String
     let originalLanguage: String
-    let genres: [Int]
     let isAdult: Bool
     let overview: String
     let releaseDate: String
@@ -35,9 +34,26 @@ struct Movie: Codable {
         case posterPath = "poster_path"
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
-        case genres = "genre_ids"
         case isAdult = "adult"
         case releaseDate = "release_date"
         case backdropPath = "backdrop_path"
+    }
+
+    init(votes: Int, identifier: Int, hasVideo: Bool, averageRating: Float, title: String,
+         popularity: Float, posterPath: String?, originalTitle: String, originalLanguage: String, isAdult: Bool, overview: String, releaseDate: String, backdropPath: String?) {
+
+        self.votes = votes
+        self.identifier = identifier
+        self.hasVideo = hasVideo
+        self.averageRating = averageRating
+        self.title = title
+        self.popularity = popularity
+        self.posterPath = posterPath
+        self.originalTitle = originalTitle
+        self.originalLanguage = originalLanguage
+        self.isAdult = isAdult
+        self.overview = overview
+        self.releaseDate = releaseDate
+        self.backdropPath = backdropPath
     }
 }

@@ -32,6 +32,21 @@ class MoviesViewController: UIViewController {
         super.viewDidLoad()
         self.setupTableViewbindind()
     }
+    
+    func setupDataDriver() {
+        let tableView = self.moviesView.tableView
+
+        let pageDriver = tableView.rx
+            .contentOffset
+            .map(self.isNearTableViewBottom)
+            .distinctUntilChanged()
+            .filter { $0 == true }
+            .scan(0, accumulator: { page, _ in page + 1})
+            .asDriver(onErrorJustReturn: 1)
+
+
+        self.interactor?.fetchMovies(from: pageDriver)
+    }
 }
 
 extension MoviesViewController: MoviesDisplayLogic {
@@ -69,15 +84,7 @@ extension MoviesViewController: MoviesDisplayLogic {
     private func setupTableViewbindind() {
         let tableView = self.moviesView.tableView
 
-        let pageDriver = tableView.rx
-            .contentOffset
-            .map(self.isNearTableViewBottom)
-            .distinctUntilChanged()
-            .filter { $0 == true }
-            .scan(0, accumulator: { page, _ in page + 1})
-            .asDriver(onErrorJustReturn: 1)
-
-        self.interactor?.fetchMovies(from: pageDriver)
+        self.setupDataDriver()
 
         self.router?.route(to: tableView.rx.itemSelected.map { $0.row })
     }

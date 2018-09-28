@@ -39,8 +39,9 @@ class MovieDetailViewController: UIViewController {
         }
         let dataLoader = self.rx.sentMessage(#selector(self.viewDidLoad))
                                 .map { _ in }
+        let favoriteButtonTap = self.movieDetailView.favorite.rx.tap.asObservable()
+        self.interactor?.toggleFavorite(favoriteButtonTap)
         self.interactor?.fetchDetails(dataLoader)
-
     }
 }
 
@@ -51,6 +52,8 @@ extension MovieDetailViewController: MovieDetailDisplayLogic {
             self.movieDetailView.info.date.text = movie.releaseDate
             self.movieDetailView.info.rating.value = CGFloat(movie.averageRating)
             self.movieDetailView.summary.text = movie.summary
+            let favoriteButtonText = movie.isFavorite ? "Remove from favorites" : "Add to favorites"
+            self.movieDetailView.favorite.setTitle(favoriteButtonText, for: .normal)
             if let imageString = movie.imageURL, let url = URL(string: imageString) {
                 Nuke.loadImage(with: url, into: self.movieDetailView.img)
             }
