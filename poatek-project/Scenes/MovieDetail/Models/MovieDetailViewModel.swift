@@ -14,13 +14,16 @@ struct MovieDetailViewModel {
     let releaseDate: String
     let imageURL: String?
     let summary: String
+    let isFavorite: Bool
 
-    static func from(movie: Movie) -> MovieDetailViewModel {
+    static func from(movieDetailResponse: MovieDetailResponse) -> MovieDetailViewModel {
+        let movie = movieDetailResponse.movie
         return MovieDetailViewModel(title: movie.title,
                               averageRating: movie.averageRating * 10 ,
                               releaseDate: movie.releaseDate,
                               imageURL: MovieDetailViewModel.imageURL(from: movie),
-                              summary: movie.overview)
+                              summary: movie.overview,
+                              isFavorite: movieDetailResponse.isFavorite)
     }
 
     private static func imageURL(from movie: Movie) -> String? {

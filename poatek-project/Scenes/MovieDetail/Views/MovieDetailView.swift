@@ -14,8 +14,10 @@ class MovieDetailView: UIView {
     let info = MovieBasicInfoView()
     let summary = UITextView()
     let close = UIButton()
+    let favorite = UIButton()
 
     var closeAction: (() -> Void)?
+    var favoriteAction: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,10 +27,23 @@ class MovieDetailView: UIView {
         self.setupInfo()
         self.setupSummary()
         self.setupClose()
+        self.setupFavorite()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupFavorite() {
+        self.addSubview(self.favorite)
+        self.favorite.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        self.favorite.setTitle("Add to favorites", for: .normal)
+        self.favorite.setTitleColor(#colorLiteral(red: 0.1294117647, green: 0.8156862745, blue: 0.4784313725, alpha: 1), for: .normal)
+        self.favorite.addTarget(self, action: #selector(self.didPressFavorite), for: .touchUpInside)
+
+        self.favorite.snp.makeConstraints { make in
+            make.left.bottom.right.equalToSuperview()
+        }
     }
 
     private func setupClose() {
@@ -44,6 +59,10 @@ class MovieDetailView: UIView {
 
     @objc private func didPressClose() {
         self.closeAction?()
+    }
+
+    @objc private func didPressFavorite() {
+        self.favoriteAction?()
     }
 
     private func setupImg() {
