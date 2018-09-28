@@ -15,9 +15,9 @@ protocol MovieDetailBusinessLogic {
 
 class MovieDetailInteractor: MovieDetailBusinessLogic {
     var presenter: MovieDetailPresentationLogic?
-    private var movie: Observable<MovieViewModel>
+    private var movie: Observable<Movie>
 
-    init(movie: MovieViewModel) {
+    init(movie: Movie) {
         self.movie = Observable.just(movie)
     }
 

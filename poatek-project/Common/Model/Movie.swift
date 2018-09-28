@@ -10,7 +10,7 @@ import Foundation
 
 struct Movie: Codable {
     let votes: Int
-    let id: Int
+    let identifier: Int
     let hasVideo: Bool
     let averageRating: Float
     let title: String
@@ -25,7 +25,7 @@ struct Movie: Codable {
     let backdropPath: String?
 
     private enum CodingKeys: String, CodingKey {
-        case id
+        case identifier = "id"
         case title
         case overview
         case popularity

@@ -10,15 +10,16 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class TopMoviesInteractor: MoviesBusinessLogic {
+class MoviesInteractor: MoviesBusinessLogic {
     var presenter: MoviesPresenter?
+    var datastore: MoviesDataStore?
 
     func fetchMovies(from page: Driver<Page>) {
-        let worker = TopMoviesWorker()
-        let processed = page
-                        .asObservable()
-                        .flatMap { worker.topRatedMovies(page: $0.page) }
+        guard let datastore = datastore else {
+            return
+        }
 
-        self.presenter?.presentationInput(processed)
+        let movies = MoviesWorker(datastore: datastore).movies(page: page.asObservable())
+        self.presenter?.presentationInput(movies)
     }
 }
