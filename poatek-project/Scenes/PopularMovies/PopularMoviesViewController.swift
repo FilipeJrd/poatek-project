@@ -16,11 +16,20 @@ class PopularMoviesViewController: MoviesViewController {
 
     static func setup() -> UIViewController {
         let viewController = PopularMoviesViewController()
-        let interactor = PopularMoviesInteractor()
+        let interactor = MoviesInteractor()
         let presenter = MoviesPresenter()
+        let router = MoviesRouter()
+        let datastore = PopularMoviesDataStore()
 
         viewController.interactor = interactor
+        viewController.router = router
+
+        router.viewController = viewController
+        router.datastore = datastore
+
         interactor.presenter = presenter
+        interactor.datastore = datastore
+
         presenter.viewController = viewController
 
         viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 1)

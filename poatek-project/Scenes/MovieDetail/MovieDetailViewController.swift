@@ -12,14 +12,14 @@ import RxSwift
 import Nuke
 
 protocol MovieDetailDisplayLogic {
-    func display(movie: Driver<MovieViewModel>)
+    func display(movie: Driver<MovieDetailViewModel>)
 }
 class MovieDetailViewController: UIViewController {
     let disposeBag = DisposeBag()
     let movieDetailView = MovieDetailView()
     var interactor: MovieDetailBusinessLogic?
 
-    static func setup(with movie: MovieViewModel) -> UIViewController {
+    static func setup(with movie: Movie) -> UIViewController {
         let viewController = MovieDetailViewController()
         let interactor = MovieDetailInteractor(movie: movie)
         let presenter = MovieDetailPresenter()
@@ -45,7 +45,7 @@ class MovieDetailViewController: UIViewController {
 }
 
 extension MovieDetailViewController: MovieDetailDisplayLogic {
-    func display(movie: Driver<MovieViewModel>) {
+    func display(movie: Driver<MovieDetailViewModel>) {
         movie.asObservable().subscribe(onNext: { movie in
             self.movieDetailView.info.title.text = movie.title
             self.movieDetailView.info.date.text = movie.releaseDate

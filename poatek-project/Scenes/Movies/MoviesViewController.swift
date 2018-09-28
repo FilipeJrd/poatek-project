@@ -12,13 +12,14 @@ import RxSwift
 import Nuke
 
 protocol MoviesDisplayLogic {
-    func display(movies: Driver<MoviesViewModel>)
+    func display(movies: Driver<[MovieViewModel]>)
     func display(errorMessage: Driver<String>)
 }
 
 class MoviesViewController: UIViewController {
     private let disposeBag = DisposeBag()
     var interactor: MoviesBusinessLogic?
+    var router: MoviesRoutingLogic?
 
     private var moviesView = MoviesView()
 
@@ -44,17 +45,15 @@ extension MoviesViewController: MoviesDisplayLogic {
                 alert.addAction(UIAlertAction(title: "ok",
                                               style: .cancel,
                                               handler: nil))
-                
+
                 self.present(alert, animated: true, completion: nil)
             }
         }.disposed(by: self.disposeBag)
     }
 
-    func display(movies: Driver<MoviesViewModel>) {
+    func display(movies: Driver<[MovieViewModel]>) {
         let tableView = self.moviesView.tableView
         movies.asObservable()
-            .map { $0.movies }
-            .scan([], accumulator: { $0 + $1 })
             .bind(to: tableView.rx.items(cellIdentifier: MovieViewCell.identifier,
                                          cellType: MovieViewCell.self)
             ) { _, movie, cell in
@@ -71,14 +70,6 @@ extension MoviesViewController: MoviesDisplayLogic {
     private func setupTableViewbindind() {
         let tableView = self.moviesView.tableView
 
-        tableView.rx.modelSelected(MovieViewModel.self).subscribe { event in
-            if case let .next(movie) = event {
-            let vc = MovieDetailViewController.setup(with: movie)
-            self.present(vc, animated: true)
-            }
-        }.disposed(by: self.disposeBag)
-
-
         let pageDriver = tableView.rx
             .contentOffset
             .map(self.isNearTableViewBottom)
@@ -89,6 +80,8 @@ extension MoviesViewController: MoviesDisplayLogic {
             .asDriver(onErrorJustReturn: MoviesRequest(page: 1))
 
         self.interactor?.fetchMovies(from: pageDriver)
+
+        self.router?.route(to: tableView.rx.itemSelected.map { $0.row })
     }
 
     private func isNearTableViewBottom(point: CGPoint) -> Bool {
